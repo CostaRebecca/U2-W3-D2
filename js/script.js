@@ -43,6 +43,13 @@ function checkStorageForName() {
     btnRemove.onclick = removeLocal;
 
   });
+
+let count = sessionStorage.getItem('count') || 0;
+
+window.onload = setInterval(function() {
+  count++;
+  sessionStorage.setItem('count', count);
+}, 1000);
   
 
 
