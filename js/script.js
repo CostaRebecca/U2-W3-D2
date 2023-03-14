@@ -6,14 +6,30 @@ function checkStorageForName() {
   }
   
   const saveLocal = function () {
+
+    let pName = document.getElementById("saveItems");
     let utente = document.getElementById("name").value; 
-  
+
     localStorage.setItem("name", utente);
+    document.getElementById("name").value = "";
+
+    
+    
+    pName.innerText = utente;
+
     checkStorageForName();
+
+    
   };
   
   const removeLocal = function () {
+    let pName = document.getElementById("saveItems");
+
     localStorage.removeItem("name");
+    document.getElementById("name").value = "";
+
+   pName.innerText = "";
+
     checkStorageForName();
   };
   
@@ -25,6 +41,7 @@ function checkStorageForName() {
   
     const btnRemove = document.getElementById("remove");
     btnRemove.onclick = removeLocal;
+
   });
   
 
